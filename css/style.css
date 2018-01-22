@@ -15,7 +15,10 @@ h1 { font-size : 50px; }
 
 p { font-size : 14px; }
 
-li { list-style : none; }
+li {
+	list-style : none;
+	text-transform : capitalize;	
+}
 
 a {
 	text-decoration : none;
@@ -25,14 +28,16 @@ a {
 a:hover {
 	text-decoration : none;
 	color : red;
+	transition : 700ms;
+	-webkit-transition : 700ms;
 }
 
-a:active {
-	decoration : underline;
+.active a {
+	text-decoration : underline;
 	color : red;
+	transition : 700ms;
+	-webkit-transition : 700ms;
 }
-
-li { text-transform : capitalize; }
 
 
 
@@ -95,8 +100,6 @@ li { text-transform : capitalize; }
 	}
 	
 	
-	
-	
 	#about {
 		background : gray;
 	}
@@ -111,6 +114,7 @@ li { text-transform : capitalize; }
 		flex : 1;
 		margin : 0;
 		padding : 10px;
+		position : relative;
 	}
 	
 	.left_box p {
@@ -280,20 +284,34 @@ li { text-transform : capitalize; }
 	}
 	
 	.solution {
+		bottom : 10px;
+		left : 0;
+		right : 0;
+		text-align : center;
+		overflow : hidden;
+		width : 0;
+		height : 0;
 		transition : .5s ease;
-		opacity : 0;
 		position : absolute;
-		
-		transform : translate(-50%, -50%);
-		-ms-transform : translate(-50%, -50%);
+		background : white;
+		border-radius : 8px;
 	}
 	
-	.box:hover .images { opacity : 0.3; }
+	.box:hover .images { opacity : 0.3;	}
 	
-	.box:hover .solution { opacity : 1; }
+	.box:hover .solution { height : 40%;
+		width : 100%;
+	}
 	
-	.text {
-		color : white
+	.text h5 {
+		font-size : 30px;
+		padding : 10px;
+		border-bottom : 1px solid black;
+	}
+	
+	.text p {
+		font-size : 15px;
+		padding : 10px;
 	}
 	
 	#contact {
