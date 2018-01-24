@@ -11,7 +11,7 @@ $(function() {
 
 
 $(function() {
-	$('#top_nav li').on("click", function(event) {
+	$('#top_nav li, #bot_nav li').on("click", function(event) {
 		event.preventDefault();
 		var element = $(this).attr('class').split(" ")[0];
 		var destination = $('#' + element).offset().top;

@@ -228,7 +228,7 @@
 <!-- Features -->
 <div id = "intro" style = "background : rgba(52, 210, 147, 0.8);">
 	<div class = "container">
-		<p class = "white_text">펀랩은 사람을 소중히 셍각합니다.</p>
+		<p class = "white_text">펀랩은 사람을 소중히 생각합니다.</p>
 	</div>
 </div>
 
@@ -440,8 +440,65 @@
 			<p class = "white_text">&copy;2017 FUNLAB</p>
 		</div>
 	</div>
+	
+	<!-- Top Button -->
+	<button onclick = "topFunction()" id ="top_Btn" title = "Go to Top">Home</button>
+	<script type = "text/javascript">
+		window.onscroll = function() {scrollFunction()};
+		
+		function scrollFunction() {
+			if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+				document.getElementById("top_Btn").style.display = "block";
+			} else {
+				document.getElementById("top_Btn").style.display = "none";
+			}
+		}
+		
+		function topFunction() {
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0;
+		}
+	</script>
+	<!-- Top Button End -->
 </div>
 <!-- Footer End -->
+
+<!-- Bottom Navigation -->
+<div id = "bot_nav">
+	<ul>
+		<li class = "about">
+			<a href = "#about">
+				<img src = "images/bot_about.png"><br />about
+			</a>
+		</li>
+		<li class = "focus">
+			<a href = "#focus">
+				<img src = "images/bot_focus.png"><br />focus
+			</a>
+		</li>
+		<li class = "features">
+			<a href = "#features">
+				<img src = "images/bot_features.png"><br />features
+			</a>
+		</li>
+		<li class = "projects">
+			<a href = "#projects">
+				<img src = "images/bot_project.png"><br />projects
+			</a>
+		</li>
+		<li class = "products">
+			<a href = "#products">
+				<img src = "images/bot_product.png"><br />products
+			</a>
+		</li>
+		<li class = "contact">
+			<a href = "#contact">
+				<img src = "images/bot_contact.png"><br />contact
+			</a>
+		</li>
+	</ul>
+</div>
+<!-- Footer Fixed Menu End -->
 
 <script src = "js/jquery-3.2.1.min.js"></script>
 <script src = "js/vegas.min.js"></script>
