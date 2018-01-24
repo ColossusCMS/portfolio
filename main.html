@@ -445,15 +445,20 @@
 	<button onclick = "topFunction()" id ="top_Btn" title = "Go to Top">Home</button>
 	<script type = "text/javascript">
 		window.onscroll = function() {scrollFunction()};
-		
+		var width = screen.availWidth;
+	
 		function scrollFunction() {
-			if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-				document.getElementById("top_Btn").style.display = "block";
+			if (width < 426) {
+				if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+					document.getElementById("top_Btn").style.display = "block";
+				} else {
+					document.getElementById("top_Btn").style.display = "none";
+				}
 			} else {
 				document.getElementById("top_Btn").style.display = "none";
 			}
 		}
-		
+	
 		function topFunction() {
 			document.body.scrollTop = 0;
 			document.documentElement.scrollTop = 0;
