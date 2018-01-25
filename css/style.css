@@ -37,34 +37,271 @@ a {
 
 .white_text { color : white; }
 
+.container { margin : auto; }
+
+.header {
+	background : rgba(0, 0, 0, 0.5);
+	position : relative;
+	overflow : hidden;
+}
+
+#top_nav a:hover {
+	text-decoration : none;
+	color : red;
+	transition : 700ms;
+	-webkit-transition : 700ms;
+}
+
+#top_nav .active a {
+	text-decoration : underline;
+	color : red;
+	transition : 700ms;
+	-webkit-transition : 700ms;
+}
+
+#top_nav li {
+	display : block;
+	float : left;
+	text-align : center;
+	font-size : 19px;
+	font-weight : 500;
+}
+
+#top_nav li a {
+	display : inline-block;
+	padding : 0 10px;
+	letter-spacing : 2px;
+}
+
+#about { background : gray; }
+
+.content_title { padding : 90px 0 70px 0; }
+
+.content_title p { padding : 10px 40px; }
+
+.box {
+	-webkit-flex : 1;
+	flex : 1;
+	margin : 0;
+	position : relative;
+}
+
+.left_box p {
+	text-align : center;
+	font-weight : 200;
+	line-height : 1.2;
+}
+
+.middle_box p {
+	text-align : left;
+	line-height : 1.9;
+}
+
+.right_box { text-align : left; }
+
+.skill_list {
+	display : block;
+	margin-bottom : 25px;
+}
+
+.inner_ring {
+	display: inline-block;
+	height : 64px;
+	float : left;
+	margin : 0 10px;
+}
+
+.skill_list h4 {
+	text-transform : uppercase;
+	padding-top : 5px;
+}
+
+#clients h2 { margin-bottom : 20px; }
+
+#clients ul { padding : 0 20px 10% 20px; }
+
+#clients li {
+	vertical-align : center;
+	display : inline-block;
+	margin : 5px 15px;
+	font-size : 19px;
+	text-transform : initial;
+}
+
+#focus { background : #fff; }
+
+.four-column-box { padding : 0 10px; }
+
+.four-column-box h4 {
+	margin : 20px 0;
+	padding-bottom : 10px;
+}
+
+.overlay {
+	border-radius : 50%;
+	position : absolute;
+	top : 0;
+	left : 0;
+	width : 100%;
+	height : 100%;
+	opacity : 0;
+	transition : .3s ease;
+}
+
+.outer_circle {
+	width : 130px;
+	height : 130px;
+	background : gray;
+	border-radius : 50%;
+	position : relative;
+	margin-top : 10px;
+	margin-bottom : 20px;
+}
+
+.outer_circle:hover .overlay, .outer_circle:active .overlay { opacity : 1; }
+
+.inner_circle {
+	width : 110px;
+	height : 110px;
+	background : #fff;
+	border-radius : 50%;
+	position : absolute;
+	left : 50%;
+	top : 50%;
+	transform : translate(-50%, -50%);
+}
+
+.inner_circle img {
+	padding-top : 15px;
+	margin-top : 10px;
+	margin-bottom : 10px;
+}
+
+.red_circle { background : red; }
+
+.green_circle { background : green; }
+
+.blue_circle { background : blue; }
+
+.orange_circle { background : orange; }
+
+#etc ul { padding : 20px 0 10% 0; }
+
+#etc li {
+	vertical-align : middle;
+	display : inline-block;
+	margin : 5px 10px;
+	text-transform : uppercase;
+	font-size : 14px;
+}
+
+#features { background : #fff; }
+
+.two_column { padding-bottom : 10%; }
+
+.tbox {
+	text-align : center;
+	padding : 15px 0;
+}
+
+.row_style {
+	display : inline-block;
+	margin : 0 10px;
+}
+
+#intro p {
+	font-size : 25px;
+	padding : 80px 0;
+}
+
+#projects { background : #fff; }
+
+#portfolio {
+	margin : 0 10px;
+	padding-bottom : 10%;
+}
+
+#portfolio ul { overflow : hidden; }
+
+#portfolio li {
+	white-space : nowrap;
+	overflow : hidden;
+	font-size : 14px;
+	font-weight : 550;
+	line-height : 2.5;
+	text-align : left;
+	float: left;
+	text-transform : uppercase;
+	transition : 0.4s all;
+	-webkit-transition : 0.4s all;
+}
+
+#products {
+	background : rgba(39, 144, 176, 0.96);
+	padding-bottom : 10%;
+}
+
+.images {
+	width : 100%;
+	opacity : 1;
+	display : block;
+	height : auto;
+	transition : .5s ease;
+}
+
+.solution {
+	bottom : 30px;
+	left : 0;
+	right : 0;
+	text-align : center;
+	overflow : hidden;
+	transition : .5s ease;
+	position : absolute;
+	border-radius : 8px;
+	background : #fff;
+	opacity : 0;
+	height : auto;
+}
+
+.box:hover .images { opacity : 0.3; }
+
+.box:hover .solution {
+	width : 100%;
+	opacity : 1;
+}
+
+.text h5 {
+	font-size : 30px;
+	padding : 10px;
+	border-bottom : 1px solid black;
+}
+
+.text p {
+	font-size : 15px;
+	padding : 10px;
+}
+
+#contact {
+	background : rgba(0, 0, 0, 0.5);
+	padding-bottom : 10%;
+}
+
+#contact a, #footer a { color : red; }
+
+#footer { background : gray; }
+
+#footer img { padding-bottom : 10px; }
+
+.details { padding-top : 20px; }
+
+#copyright { background : black; }
+
+
 /* PC */
 @media only screen and (min-width : 769px) {
-	.container {
-		margin : auto;
-		width : 1024px;
-		position : relative;
-	}
+	.container { width : 1024px; }
 	
-	a:hover {
-		text-decoration : none;
-		color : red;
-		transition : 700ms;
-		-webkit-transition : 700ms;
-	}
-	
-	.active a {
-		text-decoration : underline;
-		color : red;
-		transition : 700ms;
-		-webkit-transition : 700ms;
-	}
-	
-	.header {
-		min-height : 775px;
-		background : rgba(0, 0, 0, 0.5);
-		position: relative;
-		overflow: hidden;
-	}
+	.header { min-height : 775px; }
 	
 	#logo {
 		float : left;
@@ -73,262 +310,48 @@ a {
 	
 	#logo img { height : 40px; }
 	
-	#top_nav {
-		float : right;
-		margin : 30px 0;
-	}
-	
 	.intro {
 		margin-top : 33%;
 		z-index : 0;
 	}
 	
-	#top_nav li {
-		display : block;
-		float : left;
-		text-align : center;
-		font-size : 17px;
-		font-weight : 500;
+	#top_nav {
+		float : right;
+		margin : 30px 0;
 	}
 	
-	#top_nav li a {
-		display : inline-block;
-		padding : 0 10px;
-		letter-spacing : 2px;
+	.column {
+		display : -webkit-flex;
+		display : flex;
 	}
 	
-	
-	#about {
-		background : gray;
-	}
-	
-	.content_title { padding : 90px 0 70px 0; }
-	
-	.content_title p { padding : 10px 40px; }
-	
-	.column { display : flex; }
-	
-	.box {
-		flex : 1;
-		margin : 0;
-		padding : 10px;
-		position : relative;
-	}
+	.box { padding : 10px; }
 	
 	.left_box p {
 		font-size : 60px;
 		text-align : right;
-		font-weight : 200;
-		line-height : 1.2;
 	}
-	
-	.middle_box p {
-		text-align : left;
-		line-height : 1.9;
-	}
-	
-	.right_box {
-		text-align : left;
-	}
-	
-	.skill_list {
-		display : block;
-		margin-bottom : 25px;
-	}
-	
-	.inner_ring {
-		display : inline-block;
-		height : 64px;
-		float : left;
-		margin : 0 10px;
-	}
-	
-	.skill_list h4 {
-		text-transform : uppercase;
-		padding-top : 5px;
-	}
-	
-	#clients h2 { margin-bottom : 20px;	}
-	
-	#clients ul { padding : 0 20px 10% 20px; }
-	
-	#clients li {
-		vertical-align : center;
-		display : inline-block;
-		margin : 5px 15px;
-		font-size : 19px;
-		text-transform : initial;
-	}
-	
-	#focus { background : #fff; }
-	
-	.four-column-box h4 {
-		margin : 20px 0;
-		padding-bottom : 10px;
-	}
-	
-	.overlay {
-		border-radius : 50%;
-		position : absolute;
-		top : 0;
-		left : 0;
-		width : 100%;
-		height : 100%;
-		opacity : 0;
-		transition : .3s ease;
-	}
-	
-	.outer_circle {
-		width : 130px;
-		height : 130px;
-		background : gray;
-		border-radius : 50%;
-		position : relative;
-		margin-top : 10px;
-		margin-botton : 20px;
-	}
-	
-	.outer_circle:hover .overlay, .outer_circle:active .overlay { opacity : 1; }
-	
-	.inner_circle {
-		width : 110px;
-		height : 110px;
-		background : white;
-		border-radius : 50%;
-		position : absolute;
-		left : 50%;
-		top : 50%;
-		transform : translate(-50%, -50%);
-	}
-	
-	.inner_circle img {
-		padding-top : 15px;
-		margin-top : 10px;
-		margin-bottom : 10px;
-	}
-	
-	.red_circle { background : red; }
-	
-	.green_circle { background : green; }
-	
-	.blue_circle { background : blue; }
-	
-	.orange_circle { background : orange; }
 	
 	#etc ul { padding : 20px 0 10% 0; }
 	
-	#etc li {
-		vertical-align : middle;
-		display : inline-block;
-		margin : 5px 10px;
-		text-transform : uppercase;
-		font-size : 14px;
-	}
+	.two_column { column-count : 2; }
 	
-	#features { background : white; }
+	.tbox { text-align : left; }
 	
-	.two_column {
-		column-count : 2;
-		padding-bottom : 10%;
-	}
-	
-	.tbox {
-		text-align : left;
-		padding : 15px 0;
-	}
-	
-	.row_style {
-		float : left;
-		display : inline-block;
-		margin : 0 10px;
-	}
-	
-	#intro p {
-		font-size : 25px;
-		padding : 80px 0;
-	}
-	
-	#projects { background : white; }
+	.row_style { float : left; }
 	
 	#portfolio {
 		margin : 0 10px;
 		padding-bottom : 10%;
 	}
 	
-	#portfolio li {
-		white-space: nowrap;
-		overflow: hidden;
-		font-size : 14px;
-		font-weight : 550;
-		line-height : 2.5;
-		text-align : left;
-		float : left;
-		text-transform : uppercase;
-		transition : 0.4s all;
-		-webkit-transition : 0.4s all;
-	}
+	#portfolio li {	width : calc(100% / 3); }
 	
-	#products {
-		background : rgba(39, 144, 176, 0.96);
-		padding-bottom : 5%;
-	}
-	
-	.images {
-		width : 100%;
-		opacity : 1;
-		display : block;
-		height : auto;
-		transition : .5s ease;
-	}
-	
-	.solution {
-		bottom : 10px;
-		left : 0;
-		right : 0;
-		text-align : center;
-		overflow : hidden;
-		width : 0;
-		height : 0;
-		transition : .5s ease;
-		position : absolute;
-		background : white;
-		border-radius : 8px;
-	}
-	
-	.box:hover .images { opacity : 0.3;	}
-	
-	.box:hover .solution { height : 40%;
-		width : 100%;
-	}
-	
-	.text h5 {
-		font-size : 30px;
-		padding : 10px;
-		border-bottom : 1px solid black;
-	}
-	
-	.text p {
-		font-size : 15px;
-		padding : 10px;
-	}
-	
-	#contact {
-		background : rgba(0, 0, 0, 0.5);
-		padding-bottom : 5%;
-	}
-	
-	#contact a, #footer a { color : red; }
-	
-	#footer { background : gray; }
-	
-	#footer img { padding-bottom : 10px; }
+	.solution { bottom : 10px; }
 	
 	.details { padding-top : 50px; }
 	
-	#copyright {
-		background : black;
-		padding : 90px 0;
-	}
+	#copyright { background : black; }
 	
 	#bot_nav { display : none; }
 }
@@ -337,45 +360,11 @@ a {
 	#portfolio li { width : calc(100% / 4); }
 }
 
-@media only screen and (max-width : 1024px) and (min-width : 769px) {
-	#portfolio li { width : calc(100% / 3); }
-}
-
-@media only screen and (max-width : 768px) and (min-width : 426px) {
-	#portfolio li { width : calc(100% / 2); }
-}
-
-@media only screen and (max-width : 425px) {
-	#portfolio li { width : calc(100% / 1); }
-}
-
 /* Tablet */
 @media only screen and (min-width : 426px) and (max-width : 768px){
-	.container {
-		margin : auto;
-		width : 700px;
-	}
+	.container { width : 700px; }
 	
-	a:hover {
-		text-decoration : none;
-		color : red;
-		transition : 700ms;
-		-webkit-transition : 700ms;
-	}
-	
-	.active a {
-		text-decoration : underline;
-		color : red;
-		transition : 700ms;
-		-webkit-transition : 700ms;
-	}
-	
-	.header {
-		min-height : 775px;
-		background : rgba(0, 0, 0, 0.5);
-		position: relative;
-		overflow: hidden;
-	}
+	.header { min-height : 775px; }
 
 	#logo {	margin-top : 30px; }
 	
@@ -390,178 +379,25 @@ a {
 	
 	#top_nav ul { padding : 15px; }
 	
-	#top_nav li {
-		display : block;
-		float : left;
-		text-align : center;
-		font-size : 19px;
-		font-weight : 500;
-		margin-bottom : 20px;
-	}
+	#top_nav li { margin-bottom : 20px; }
 	
-	#top_nav li a {
-		display : inline-block;
-		padding : 0 10px;
-		letter-spacing : 2px;
-	}
+	.box { padding-bottom : 30px; }
 	
-	
-	#about {
-		background : gray;
-	}
-	
-	.content_title { padding : 90px 0 70px 0; }
-	
-	.content_title p { padding : 10px 40px; }
-	
-	.box {
-		flex : 1;
-		margin : 0;
-		padding-bottom : 30px;
-		position : relative;
-	}
-	
-	.left_box p {
-		font-size : 55px;
-		text-align : center;
-		font-weight : 200;
-		line-height : 1.2;
-	}
-	
-	.middle_box p {
-		text-align : left;
-		line-height : 1.9;
-	}
-	
-	.right_box {
-		text-align : left;
-	}
-	
-	.skill_list {
-		display : block;
-		margin-bottom : 25px;
-	}
-	
-	.inner_ring {
-		display : inline-block;
-		height : 64px;
-		float : left;
-		margin : 0 10px;
-	}
-	
-	.skill_list h4 {
-		text-transform : uppercase;
-		padding-top : 5px;
-	}
-	
-	#clients h2 { margin-bottom : 20px;	}
-	
-	#clients ul { padding : 0 20px 10% 20px; }
-	
-	#clients li {
-		vertical-align : center;
-		display : inline-block;
-		margin : 5px 15px;
-		font-size : 19px;
-		text-transform : initial;
-	}
-	
-	#focus { background : #fff; }
+	.left_box p { font-size : 55px; }
 	
 	#focus .column {
+		display : -webkit-flex;
 		display : flex;
 		padding-bottom : 30px;
 	}
 	
 	.four-column-box { padding : 0 10px; }
 	
-	.four-column-box h4 {
-		margin : 20px 0;
-		padding-bottom : 10px;
-	}
-	
-	.overlay {
-		border-radius : 50%;
-		position : absolute;
-		top : 0;
-		left : 0;
-		width : 100%;
-		height : 100%;
-		opacity : 0;
-		transition : .3s ease;
-	}
-	
-	.outer_circle {
-		width : 130px;
-		height : 130px;
-		background : gray;
-		border-radius : 50%;
-		position : relative;
-		margin-top : 10px;
-		margin-botton : 20px;
-	}
-	
-	.outer_circle:hover .overlay, .outer_circle:active .overlay { opacity : 1; }
-	
-	.inner_circle {
-		width : 110px;
-		height : 110px;
-		background : white;
-		border-radius : 50%;
-		position : absolute;
-		left : 50%;
-		top : 50%;
-		transform : translate(-50%, -50%);
-	}
-	
-	.inner_circle img {
-		padding-top : 15px;
-		margin-top : 10px;
-		margin-bottom : 10px;
-	}
-	
-	.red_circle { background : red; }
-	
-	.green_circle { background : green; }
-	
-	.blue_circle { background : blue; }
-	
-	.orange_circle { background : orange; }
-	
 	#etc ul { padding : 20px 0 10% 0; }
 	
-	#etc li {
-		vertical-align : middle;
-		display : inline-block;
-		margin : 5px 10px;
-		text-transform : uppercase;
-		font-size : 14px;
-		padding-bottom : 20px;
-	}
+	#etc li { padding-bottom : 20px; }
 	
-	#features { background : white; }
-	
-	.two_column {
-		column-count : 2;
-		padding-bottom : 10%;
-	}
-	
-	.tbox {
-		text-align : center;
-		padding : 15px 0;
-	}
-	
-	.row_style {
-		display : inline-block;
-		margin : 0 10px;
-	}
-	
-	#intro p {
-		font-size : 25px;
-		padding : 80px 0;
-	}
-	
-	#projects { background : white; }
+	.two_column { column-count : 2; }
 	
 	#portfolio {
 		margin : 0 10px;
@@ -570,80 +406,7 @@ a {
 	
 	#portfolio ul { overflow : hidden; }
 	
-	#portfolio li {
-		white-space : nowrap;
-		overflow : hidden;
-		font-size : 14px;
-		font-weight : 550;
-		line-height : 2.5;
-		text-align : left;
-		float : left;
-		text-transform : uppercase;
-		transition : 0.4s all;
-		-webkit-transition : 0.4s all;
-	}
-	
-	#products {
-		background : rgba(39, 144, 176, 0.96);
-		padding-bottom : 5%;
-	}
-	
-	.images {
-		width : 100%;
-		opacity : 1;
-		display : block;
-		height : auto;
-		transition : .5s ease;
-	}
-	
-	.solution {
-		bottom : 30px;
-		left : 0;
-		right : 0;
-		text-align : center;
-		overflow : hidden;
-		width : 0;
-		height : 0;
-		transition : .5s ease;
-		position : absolute;
-		background : white;
-		border-radius : 8px;
-	}
-	
-	.box:hover .images { opacity : 0.3;	}
-	
-	.box:hover .solution { height : 40%;
-		width : 100%;
-	}
-	
-	.text h5 {
-		font-size : 30px;
-		padding : 10px;
-		border-bottom : 1px solid black;
-	}
-	
-	.text p {
-		font-size : 15px;
-		padding : 10px;
-	}
-	
-	#contact {
-		background : rgba(0, 0, 0, 0.5);
-		padding-bottom : 10%;
-	}
-	
-	#contact a, #footer a { color : red; }
-	
-	#footer { background : gray; }
-	
-	#footer img { padding-bottom : 10px; }
-	
-	.details { padding-top : 20px; }
-	
-	#copyright {
-		background : black;
-		padding : 50px 0;
-	}
+	#portfolio li { width : calc(100% / 2); }
 	
 	#bot_nav { display : none; }
 }
@@ -652,17 +415,9 @@ a {
 @media only screen and (max-width : 425px) {
 	body { margin-bottom : 10%; }
 	
-	.container {
-		margin : auto;
-		width : 100%;
-	}
+	.container { width : 100%; }
 	
-	.header {
-		background : rgba(0, 0, 0, 0.5);
-		position : relative;
-		overflow : hidden;
-		padding-bottom : 10%;
-	}
+	.header { padding-bottom : 10%; }
 	
 	#logo { margin : 20px 0; }
 	
@@ -678,148 +433,19 @@ a {
 	
 	#top_nav { display : none; }
 	
-	#top_nav li {
-		display : block;
-		float : left;
-		text-align : center;
-		font-size : 17px;
-		font-weight : 500;
-		border : 1px solid black;
-	}
-	
-	#top_nav li a {
-		display : inline-block;
-		padding : 0 10px;
-		letter-spacing : 2px;
-	}
-	
-	
-	
-	#about {
-		padding : 0 10px;
-		background : gray;
-	}
-	
-	.content_title { padding : 90px 0 70px 0; }
+	#about { padding : 0 10px; }
 	
 	.content_title p { padding : 10px 0; }
 	
-	.box {
-		flex : 1;
-		margin : 0;
-		padding-bottom : 30px;
-		position : relative;
-	}
+	.box { padding-bottom : 30px; }
 	
-	.left_box p {
-		font-size : 35px;
-		text-align : center;
-		font-weight : 200;
-		line-height : 1.2;
-	}
+	.left_box p { font-size : 35px; }
 	
-	.middle_box p {
-		text-align : left;
-		line-height : 1.9;
-	}
+	#focus { padding : 0 10px; }
 	
-	.right_box {
-		text-align : left;
-	}
-	
-	.skill_list {
-		display : block;
-		margin-bottom : 25px;
-	}
-	
-	.inner_ring {
-		display : inline-block;
-		height : 64px;
-		float : left;
-		margin : 0 10px;
-	}
-	
-	.skill_list h4 {
-		text-transform : uppercase;
-		padding-top : 5px;
-	}
-	
-	#clients h2 { margin-bottom : 20px;	}
-	
-	#clients ul { padding : 0 20px 10% 20px; }
-	
-	#clients li {
-		vertical-align : center;
-		display : inline-block;
-		margin : 5px 15px;
-		font-size : 19px;
-		text-transform : initial;
-	}
-	
-	#focus {
-		background : #fff;
-		padding : 0 10px;
-	}
-	
-	#focus .column {
-		
-		padding-bottom : 30px;
-	}
+	#focus .column { padding-bottom : 30px; }
 	
 	.four-column-box { padding : 0 10px; }
-	
-	.four-column-box h4 {
-		margin : 20px 0;
-		padding-bottom : 10px;
-	}
-	
-	.overlay {
-		border-radius : 50%;
-		position : absolute;
-		top : 0;
-		left : 0;
-		width : 100%;
-		height : 100%;
-		opacity : 0;
-		transition : .3s ease;
-	}
-	
-	.outer_circle {
-		width : 130px;
-		height : 130px;
-		background : gray;
-		border-radius : 50%;
-		position : relative;
-		margin-top : 10px;
-		margin-botton : 20px;
-	}
-	
-	.outer_circle:hover .overlay, .outer_circle:active .overlay { opacity : 1; }
-	
-	.inner_circle {
-		width : 110px;
-		height : 110px;
-		background : white;
-		border-radius : 50%;
-		position : absolute;
-		left : 50%;
-		top : 50%;
-		transform : translate(-50%, -50%);
-	}
-	
-	.inner_circle img {
-		padding-top : 15px;
-		margin-top : 10px;
-		margin-bottom : 10px;
-	}
-	
-	.red_circle { background : red; }
-	
-	.green_circle { background : green; }
-	
-	.blue_circle { background : blue; }
-	
-	.orange_circle { background : orange; }
 	
 	#etc ul {
 		padding : 20px 0 10% 0;
@@ -827,40 +453,17 @@ a {
 	}
 	
 	#etc li {
-		vertical-align : middle;
 		display : block;
-		margin : 5px 10px;
-		text-transform : uppercase;
-		font-size : 14px;
 		padding-bottom : 20px;
 	}
 	
-	#features {
-		background : white;
-		padding : 0 10px;
-	}
+	#features { padding : 0 10px; }
 	
-	.two_column { padding-bottom : 10%;	}
+	.tbox { padding : 20px 10px 50px 10px; }
 	
-	.tbox {
-		text-align : center;
-		padding : 20px 10px 50px 10px;
-	}
+	#intro p { font-size : 20px; }
 	
-	.row_style {
-		display : inline-block;
-		margin : 0 10px;
-	}
-	
-	#intro p {
-		font-size : 20px;
-		padding : 80px 0;
-	}
-	
-	#projects {
-		background : white;
-		padding : 0 10px;
-	}
+	#projects { padding : 0 10px; }
 	
 	#portfolio {
 		margin : 0 10px;
@@ -869,81 +472,15 @@ a {
 	
 	#portfolio ul { overflow : hidden; }
 	
-	#portfolio li {
-		white-space : nowrap;
-		overflow : hidden;
-		font-size : 14px;
-		font-weight : 550;
-		line-height : 2.5;
-		text-align : left;
-		float : left;
-		text-transform : uppercase;
-		transition : 0.4s all;
-		-webkit-transition : 0.4s all;
-	}
+	#portfolio li { width : calc(100% / 1); }
 	
-	#products {
-		background : rgba(39, 144, 176, 0.96);
-		padding : 0 10px 10% 10px;
-	}
+	#products { padding : 0 10px 10% 10px; }
+
+	.text h5 { font-size : 20px; }
 	
-	.images {
-		width : 100%;
-		opacity : 1;
-		display : block;
-		height : auto;
-		transition : .5s ease;
-	}
+	#contact { padding : 0 10px 20% 10px; }
 	
-	.solution {
-		bottom : 30px;
-		left : 0;
-		right : 0;
-		text-align : center;
-		overflow : hidden;
-		opacity : 0;
-		transition : .5s ease;
-		position : absolute;
-		background : white;
-		border-radius : 8px;
-	}
-	
-	.box:hover .images { opacity : 0.3;	}
-	
-	.box:hover .solution {
-		height : auto;
-		width : 100%;
-		opacity : 1;
-	}
-	
-	.text h5 {
-		font-size : 20px;
-		padding : 10px;
-		border-bottom : 1px solid black;
-	}
-	
-	.text p {
-		font-size : 15px;
-		padding : 10px;
-	}
-	
-	#contact {
-		background : rgba(0, 0, 0, 0.5);
-		padding : 0 10px 20% 10px;
-	}
-	
-	#contact a, #footer a { color : red; }
-	
-	#footer { background : gray; }
-	
-	#footer img { padding-bottom : 10px; }
-	
-	.details { padding-top : 20px; }
-	
-	#copyright {
-		background : black;
-		padding : 20% 0;
-	}
+	#copyright { padding : 20% 0; }
 	
 	#top_Btn {
 		display : none;
