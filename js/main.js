@@ -1,3 +1,4 @@
+//Slide show
 $(function() {
 	$("body").vegas({
 		slides : [
@@ -9,7 +10,7 @@ $(function() {
 	});
 });
 
-
+//Navigation bar click move
 $(function() {
 	$('#top_nav li, #bot_nav li').on("click", function(event) {
 		event.preventDefault();
@@ -26,6 +27,8 @@ $(function() {
 });
 
 
+//Navigation bar Active
+
 function setActive(offTop) {
 	var height = $(window).height();
 	var overlap = 0;
@@ -33,5 +36,15 @@ function setActive(offTop) {
 		overlap = height - 1;
 	}
 	var shown = Math.ceil((offTop - overlap) / height);
-	$('#top_nav li').removeClass("active").eq(shown).addClass("active");
+	var scrT = $(window).scrollTop();
+	var scrH = $(document).height();
+	var winH = $(window).height();
+	var scrB = scrH - winH - scrT;
+	if(scrB == 0) {
+		$('#top_nav li').removeClass("active").eq(5).addClass("active");
+	} else {
+		$('#top_nav li').removeClass("active").eq(shown).addClass("active");
+	}
 }
+
+
