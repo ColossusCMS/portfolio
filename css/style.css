@@ -26,17 +26,45 @@ a {
 	color: black;
 }
 
-#top_Btn {
+#topBtn {
+	display: inline-block;
+	background-color: #FF9800;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	border-radius: 4px;
 	position: fixed;
-	bottom: 50px;
-	right: 10px;
-	z-index: 100;
-	border: none;
-	background-color: lightblue;
-	color: black;
+	bottom: 30px;
+	right: 30px;
+	transition: background-color .3s, 
+	opacity .5s, visibility .5s;
+	opacity: 0;
+	visibility: visible;
+	z-index: 1000;
+}
+
+#topBtn::after {
+	content: "\f077";
+	font-family: FontAwesome;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 2em;
+	line-height: 50px;
+	color: #fff;
+  }
+
+#topBtn:hover {
 	cursor: pointer;
-	padding: 13px;
-	border-radius: 10px;
+	background-color: #333;
+}
+
+#topBtn:active {
+	background-color: #555;
+}
+
+#topBtn.show {
+	opacity: 1;
+	visibility: visible;
 }
 
 header {
@@ -62,6 +90,13 @@ header {
 
 #top_nav li a {
 	padding: 10px 5px;
+}
+
+#top_nav ul li a:hover, #top_nav ul li a.active {
+	color: red;
+	transition: 700ms;
+	-webkit-transition: 700ms;
+	-moz-transition: 700ms;
 }
 
 .intro {
@@ -99,9 +134,15 @@ header {
 
 .typing ul li h1.on { 
 	display: inline-block;
-	animation-name: cursor; 
+	animation-name: cursor;
 	animation-duration: 0.3s; 
 	animation-iteration-count: infinite; 
+	-webkit-animation-name: cursor;
+	-webkit-animation-duration: 0.3s;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-name: cursor;
+	-moz-animation-duration: 0.3s;
+	-moz-animation-iteration-count: infinite;
 } 
 
 @keyframes cursor{ 
@@ -111,7 +152,6 @@ header {
 }
 
 .box {
-	margin-bottom: 10vh;
 	padding: 0 .5em;
 }
 
@@ -123,6 +163,7 @@ header {
 .midBox p {
 	text-align: justify;
 	margin-top: 1em;
+	margin-bottom: 2em;
 	width: 93%;
 }
 
@@ -198,6 +239,8 @@ header {
 	width: 100%;
 	opacity: 1;
 	transition: .5s ease;
+	-webkit-transition: .5s ease;
+	-moz-transition: .5s ease;
 	background-color: #fff;
 	display: block;
 }
@@ -210,6 +253,8 @@ header {
 	text-align: center;
 	overflow: hidden;
 	transition: .5s ease;
+	-webkit-transition: .5s ease;
+	-moz-transition: .5s ease;
 	position: absolute;
 	border-radius: 8px;
 	background: #fff;
@@ -367,10 +412,134 @@ footer {
 
 /* PC */
 @media only screen and (min-width: 769px) {
-	#top_nav li a:hover {
-		text-decoration: none;
-		color: red;
-		transition: 700ms;
-		-webkit-transition: 700ms;
+	header {
+		height: 100px;
+	}
+
+	#top_nav ul {
+		margin-top: 35px;
+	}
+
+	#top_nav li {
+		font-size: 1.8em;
+		padding: 0 20px;
+	}
+
+	.typing ul li {
+		margin-bottom: 4em;
+	}
+
+	.typing ul li h1 {
+		font-size: 3em;
+	}
+
+	.content {
+		padding-top: 100px;
+	}
+
+	.title {
+		margin: 50px 0;
+		font-size: 30px;
+	}
+
+	.column {
+		width: 1080px;
+		position: relative;
+	}
+
+	.box {
+		float: left;
+		margin-top: 0;
+		height: 800px;
+	}
+
+	.leftBox {
+		width: 25%;
+	}
+
+	.leftBox p {
+		font-size: 40px;
+		text-align: right;
+	}
+
+	.midBox {
+		width: 40%;
+	}
+
+	.midBox h3 {
+		font-size: 20px;
+	}
+
+	.midBox p {
+		margin-top: 2em;
+		font-size: 20px;
+	}
+
+	.rightBox {
+		width: 25%;
+	}
+
+	.rightBox ul li {
+		margin: 5px 0 2em 0;
+		display: block;
+	}
+
+	.rightBox h4 {
+		font-size: 20px;
+		margin-bottom: .7em;
+	}
+
+	.rightBox p {
+		font-size: 15px;
+	}
+
+	.intro {
+		clear: both;
+	}
+
+	.intro p {
+		font-size: 2em;
+	}
+	
+	.chart {
+		width: 300px;
+		height: 300px;
+	}
+
+	.percent {
+		line-height: 300px;
+	}
+
+	.percent:after {
+		font-size: .5em;
+	}
+
+	#skills h4 {
+		font-size: 1.5em;
+		margin: 1em 0;
+	}
+
+	#repository article {
+		border: 1px solid black;
+		display: inline-block;
+		margin: 1em;
+		width: 500px;
+	}
+
+	#repository .title p {
+		margin-top: .5em;
+		font-size: .7em;
+	}
+
+	.txtBox h4 {
+		font-size: 1.5em;
+	}
+
+	.txtBox p {
+		font-size: 1.3em;
+	}
+
+	#contact {
+		min-height: 50vh;
 	}
 }

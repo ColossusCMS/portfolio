@@ -1,4 +1,3 @@
-//Slide show
 $(function() {
 	$("body").vegas({
 		slides : [
@@ -10,58 +9,57 @@ $(function() {
 	});
 });
 
-$(function () {
-	$('#top_nav ul li').on("click", function (event) {
-	  event.preventDefault();
-	  var element = $(this).attr('class').split(" ")[0];
-	  var destination = $('#' + element).offset().top;
-	  $("html:not(:animated),body:not(:animated)").animate({
-		scrollTop: destination
-	  }, 500);
+$(function(){
+	$('#topBtn').on('click',function(e){
+        e.preventDefault();
+		$('html,body').animate({scrollTop:0},600);
 	});
-  
-	$(window).on("scroll", function () {
-	  setActive($(this).scrollTop());
+	
+	$(window).scroll(function() {
+		if ($(document).scrollTop() > 100) {
+			$('#topBtn').addClass('show');
+		} else {
+			$('#topBtn').removeClass('show');
+		}
 	});
 });
 
 $(function() {
+	$('#top_nav ul li').on('click', function (event) {
+		event.preventDefault();
+		var element = $(this).attr('class').split(" ")[0];
+		var destination = $('#' + element).offset().top;
+		$("html:not(:animated),body:not(:animated)").animate({
+		  scrollTop: destination
+		}, 500);
+	});
+
 	var height = $(window).height();
-	var overlap = "full";
-	if(overlap == "full") {
-		overlap = height - 1;
-	}
-	var shown = Math.ceil((offTop - overlap) / height);
-	var scrT = $(window).scrollTop();
-	var scrH = $(document).height();
-	var winH = $(window).height();
-	var scrB = scrH - winH - scrT;
-	if(scrB == 0) {
-		$('#top_nav li').removeClass("active").eq(5).addClass("active");
-	} else {
-		$('#top_nav li').removeClass("active").eq(shown).addClass("active");
-	}
-})
 
-function scrollFunction() {
-	var width = screen.availWidth;
-	if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-		document.getElementById("top_Btn").style.display = "block";
-	} else {
-		document.getElementById("top_Btn").style.display = "none";
-	}
-}
+	var ranges = [
+		[0, height],
+		[height + 1, height * 2],
+		[height * 2 + 195, height * 3 + 195],
+		[height * 3 + 196, height * 4 + 196],
+		[height * 4 + 196, 999999]
+	];
 
-function topFunction() {
-	var btnTop = $('#top_Btn');
-    btnTop.on('click','a', function(e){
-        e.preventDefault();
-        $doc.stop()
-		.animate({
-			scrollTop : 0
-		},800)
-    });
-}
+	$(window).on('scroll', function () {
+		var pos = $(window).scrollTop();
+		$.each(ranges, function (i, range) {
+			if (pos >= range[0] && pos <= range[1]) {
+				setActive($("#top_nav ul li").eq(i)[0]);
+				return;
+			}
+		});
+	});
+	function setActive(elem) {
+		$(elem).siblings().find('a').removeClass('active');
+		$(elem).find('a').addClass('active');
+	}
+});
+
+
 
 $(function() {
 	var size = 0;
