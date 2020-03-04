@@ -6,17 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Welcome to MS</title>
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/vegas.min.js"></script>
-    <script src="js/jquery.smooth-scroll.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/jquery.easypiechart.js"></script>
-    <script src="js/main.js"></script>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/vegas.min.js"></script>
+    <script type="text/javascript" src="js/jquery.smooth-scroll.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easypiechart.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/vegas.min.css" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css">
 </head>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+<script type="text/javascript">
+	(function(){
+		emailjs.init('user_qtdPR0RhRFY6iREyAwsBp');
+	})();
+</script>
+<script type="text/javascript">
+	window.onload = function() {
+		document.getElementById('contact-form').addEventListener('submit', function(event) {
+			event.preventDefault();
+			// generate the contact number value
+			this.contact_number.value = Math.random() * 100000 | 0;
+			emailjs.sendForm('gmail', 'template_zPneH6xh', this);
+			$('#contact-form').each(function() {
+				this.reset();
+			});
+		});
+	}
+</script>
 
 <body>
     <a id="topBtn"></a>
@@ -203,9 +222,20 @@
             <img src="https://img.icons8.com/android/40/000000/filled-message.png" alt="메일">
             <address><a href="mailto:yaahq123@gmail.com">yaahq123@gmail.com</a></address>
         </div>
+        <form id="contact-form">
+        	<input type="hidden" name="contact_number">
+        	<div class="fields">
+       			<input type="text" name="from_name" placeholder="보내는 분의 이름">
+        		<input type="email" name="from_email" placeholder="보내는 분의 이메일">
+	        	<textarea name="message_html" id="message" rows="5" placeholder="내용을 입력하세요"></textarea>
+	        	<ul class="actions">
+	        		<li><input type="submit" value="보내기" /></li>
+	        	</ul>
+        	</div>
+    	</form>
     </section>
     <footer>
-        <p>2019 M.S CHOI</p>
+        <p>2020 M.S CHOI</p>
     </footer>
 </body>
 

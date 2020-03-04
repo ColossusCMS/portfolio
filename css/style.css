@@ -542,4 +542,78 @@ footer {
 	#contact {
 		min-height: 50vh;
 	}
+	
+	.fields {
+		width: 50%;
+		text-align: center;
+		margin-top: 2em;
+	}
+
+	input, textarea {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+		background: #34363b;
+		border: 0;
+		border-radius: 0;
+		color: #a0a0a1;
+		outline: 0;
+		padding: 0 1em;
+		margin: 0.5em;
+		text-decoration: none;
+	}
+
+	input:invalid, textarea:invalid {
+		box-shadow: none;
+	}
+
+	input:focus, textarea:focus {
+		box-shadow: inset 0 0 0 2px #34a58e;
+	}
+
+	.fields input {
+		width: 250px;
+		height: 2.75em;
+	}
+	
+	.fields textarea {
+		width: 545px;
+		padding: 0.75em 1em;
+	}
+
+	::-webkit-input-placeholder {
+		color: #707071 !important;
+		opacity: 1.0;
+	}
+	
+	:-moz-placeholder {
+		color: #707071 !important;
+		opacity: 1.0;
+	}
+	
+	::-moz-placeholder {
+		color: #707071 !important;
+		opacity: 1.0;
+	}
+	
+	:-ms-input-placeholder {
+		color: #707071 !important;
+		opacity: 1.0;
+	}
+	
+	ul.actions {
+		cursor: default;
+		list-style: none;
+	}
+
+	ul.actions li {
+		padding: 0 0 0 1em;
+		vertical-align: middle;
+	}
+	
+	ul.actions li > input {
+		width: 10em;
+		height: 3em;
+	}
 }
