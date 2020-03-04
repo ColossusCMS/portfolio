@@ -26,13 +26,33 @@
 <script type="text/javascript">
 	window.onload = function() {
 		document.getElementById('contact-form').addEventListener('submit', function(event) {
+			var vaild = true;
+			if($('#name').val().length==0) {
+				alert("이름을 입력하세요.");
+				$('#contact').focus();
+				valid = false;
+			}
+			else if($('#email').val().length==0) {
+				alert("회신받을 메일 주소를 입력하세요.");
+				$('#mail').focus();
+				valid = false;
+			}
+			else if($('#message').val().length==0) {
+				alert("문의 내용을 입력하세요.");
+				$('#message').focus();
+				valid = false;
+			}
+			else {
+				// generate the contact number value
+				this.contact_number.value = Math.random() * 100000 | 0;
+				emailjs.sendForm('gmail', 'template_zPneH6xh', this);
+				alert("메일을 발송했습니다.");
+				$('#contact-form').each(function() {
+					this.reset();
+				});
+			}
 			event.preventDefault();
-			// generate the contact number value
-			this.contact_number.value = Math.random() * 100000 | 0;
-			emailjs.sendForm('gmail', 'template_zPneH6xh', this);
-			$('#contact-form').each(function() {
-				this.reset();
-			});
+			return vaild;
 		});
 	}
 </script>
@@ -225,9 +245,9 @@
         <form id="contact-form">
         	<input type="hidden" name="contact_number">
         	<div class="fields">
-       			<input type="text" name="from_name" placeholder="보내는 분의 이름">
-        		<input type="email" name="from_email" placeholder="보내는 분의 이메일">
-	        	<textarea name="message_html" id="message" rows="5" placeholder="내용을 입력하세요"></textarea>
+       			<input type="text" id="name" name="from_name" placeholder="보내는 분의 이름">
+        		<input type="email" id="email" name="from_email" placeholder="보내는 분의 이메일">
+	        	<textarea id="message" name="message_html" id="message" rows="5" placeholder="내용을 입력하세요"></textarea>
 	        	<ul class="actions">
 	        		<li><input type="submit" value="보내기" /></li>
 	        	</ul>
